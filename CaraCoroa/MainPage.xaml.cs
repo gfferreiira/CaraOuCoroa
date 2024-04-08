@@ -40,8 +40,15 @@
             {
                 ResultLabel.Text = $"Não Deu {escolha}, você perdeu.";
             }
-          
 
+            switch (valorSorteado)
+            {
+                case 0: 
+                    CoinImage.Source = "cara.jpg";
+                    break;
+                case 1: CoinImage.Source = "coroa.jpg";
+                    break;
+            }
 
 
         }

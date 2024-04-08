@@ -16,7 +16,9 @@
                 FontSize="Large"
                
                 />
-          
+            <Image x:Name="CoinImage"
+                   
+                Source="cara.jpg"  WidthRequest="150" />
 
             <Label 
                 Text=""             
