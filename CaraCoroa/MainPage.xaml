@@ -16,14 +16,14 @@
                 FontSize="Large"
                
                 />
-
+          
 
             <Label 
                 Text=""             
                  Style="{StaticResource Headline}"
                   FontSize="Header"
                    x:Name="ResultLabel"      />
-
+    
             <Picker Title="Escolha sua sorte"  x:Name="SidesPicker">
                 <Picker.ItemsSource>
                     <Array Type="{x:Type x:String}">

@@ -2,7 +2,10 @@
 {
     public partial class MainPage : ContentPage
     {
-     
+        int escolhaResultado = 0;
+        
+      
+        string escolha = "";
 
         public MainPage()
         {
@@ -11,31 +14,41 @@
 
          private void BtnSpin_Clicked(object sender, EventArgs e)
         {
-            string valor = "";
+            // Armazena a escolha do picker e define o random para sortear o número
+            escolha = SidesPicker.SelectedItem.ToString();
+            
+            int valorSorteado = new Random().Next(0, 2);
 
-            //Pegar o valor que foi selecionado pelo usuario no picker
-            valor = Convert.ToString(SidesPicker.SelectedItem);
-            //Jogar esse valor em uma variavel
-            // sortear um numero em um dado utilizando o Random
-            // Colocar o valor de uma varíavel 
-            // Exibir o valor para o usuário na SpinCountLabel
-            int valorSorteado = 0;
-            valorSorteado = new Random().Next(0, 2);
-            if (valorSorteado == 0)
+            //Compara oque o usuario escolhe com o número sorteado
+            if (escolha == "Cara")
             {
-                ResultLabel.Text = "Cara";
+                escolhaResultado = 0;
             }
             else
             {
-
-                ResultLabel.Text = "Coroa";
-
-
+                escolhaResultado = 1;
             }
-
             
-           
+          
+          //Exibe a mensagem de resultado do sorteio
+
+            if (escolhaResultado == valorSorteado)
+            {
+                ResultLabel.Text = $"Deu {escolha}, voce ganhou";
+            }
+            else
+            {
+                ResultLabel.Text = $"Não Deu {escolha}, você perdeu.";
+            }
+          
+
+
+
         }
+
+
+
+    }
     }
 
-}
+
